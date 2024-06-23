@@ -1,4 +1,4 @@
-﻿namespace Trabalho_AED2
+namespace Trabalho_AED2
 {
     partial class Form1
     {
@@ -32,90 +32,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barraDeMenu = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dicionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verificarPalavrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.caixaDeTexto = new System.Windows.Forms.TextBox();
-            this.barraDeMenu.SuspendLayout();
-            this.SuspendLayout();
+            barraDeMenu = new MenuStrip();
+            arquivoToolStripMenuItem = new ToolStripMenuItem();
+            abrirToolStripMenuItem = new ToolStripMenuItem();
+            salvarToolStripMenuItem = new ToolStripMenuItem();
+            dicionarioToolStripMenuItem = new ToolStripMenuItem();
+            verificarPalavrasToolStripMenuItem = new ToolStripMenuItem();
+            adicionarPalavrasSublinhadasToolStripMenuItem = new ToolStripMenuItem();
+            caixaDeTexto = new TextBox();
+            barraDeMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // barraDeMenu
             // 
-            this.barraDeMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.dicionarioToolStripMenuItem});
-            this.barraDeMenu.Location = new System.Drawing.Point(0, 0);
-            this.barraDeMenu.Name = "barraDeMenu";
-            this.barraDeMenu.Size = new System.Drawing.Size(800, 24);
-            this.barraDeMenu.TabIndex = 0;
-            this.barraDeMenu.Text = "barraDeMenu";
+            barraDeMenu.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, dicionarioToolStripMenuItem });
+            barraDeMenu.Location = new Point(0, 0);
+            barraDeMenu.Name = "barraDeMenu";
+            barraDeMenu.Padding = new Padding(7, 2, 0, 2);
+            barraDeMenu.Size = new Size(933, 24);
+            barraDeMenu.TabIndex = 0;
+            barraDeMenu.Text = "barraDeMenu";
+            barraDeMenu.ItemClicked += barraDeMenu_ItemClicked;
             // 
             // arquivoToolStripMenuItem
             // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abrirToolStripMenuItem,
-            this.salvarToolStripMenuItem});
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abrirToolStripMenuItem, salvarToolStripMenuItem });
+            arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            arquivoToolStripMenuItem.Size = new Size(61, 20);
+            arquivoToolStripMenuItem.Text = "Arquivo";
             // 
             // abrirToolStripMenuItem
             // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abrirToolStripMenuItem.Text = "Abrir";
-            this.abrirToolStripMenuItem.Click += new System.EventHandler(this.abrirToolStripMenuItem_Click);
+            abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            abrirToolStripMenuItem.Size = new Size(105, 22);
+            abrirToolStripMenuItem.Text = "Abrir";
+            abrirToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
             // 
             // salvarToolStripMenuItem
             // 
-            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarToolStripMenuItem.Text = "Salvar";
-            this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
+            salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            salvarToolStripMenuItem.Size = new Size(105, 22);
+            salvarToolStripMenuItem.Text = "Salvar";
+            salvarToolStripMenuItem.Click += salvarToolStripMenuItem_Click;
             // 
             // dicionarioToolStripMenuItem
             // 
-            this.dicionarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verificarPalavrasToolStripMenuItem});
-            this.dicionarioToolStripMenuItem.Name = "dicionarioToolStripMenuItem";
-            this.dicionarioToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.dicionarioToolStripMenuItem.Text = "Dicionário";
+            dicionarioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { verificarPalavrasToolStripMenuItem, adicionarPalavrasSublinhadasToolStripMenuItem });
+            dicionarioToolStripMenuItem.Name = "dicionarioToolStripMenuItem";
+            dicionarioToolStripMenuItem.Size = new Size(73, 20);
+            dicionarioToolStripMenuItem.Text = "Dicionário";
             // 
             // verificarPalavrasToolStripMenuItem
             // 
-            this.verificarPalavrasToolStripMenuItem.Name = "verificarPalavrasToolStripMenuItem";
-            this.verificarPalavrasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verificarPalavrasToolStripMenuItem.Text = "Verificar Palavras";
-            this.verificarPalavrasToolStripMenuItem.Click += new System.EventHandler(this.verificarPalavrasToolStripMenuItem_Click);
+            verificarPalavrasToolStripMenuItem.Name = "verificarPalavrasToolStripMenuItem";
+            verificarPalavrasToolStripMenuItem.Size = new Size(237, 22);
+            verificarPalavrasToolStripMenuItem.Text = "Verificar Palavras";
+            verificarPalavrasToolStripMenuItem.Click += verificarPalavrasToolStripMenuItem_Click;
+            // 
+            // adicionarPalavrasSublinhadasToolStripMenuItem
+            // 
+            adicionarPalavrasSublinhadasToolStripMenuItem.Name = "adicionarPalavrasSublinhadasToolStripMenuItem";
+            adicionarPalavrasSublinhadasToolStripMenuItem.Size = new Size(237, 22);
+            adicionarPalavrasSublinhadasToolStripMenuItem.Text = "Adicionar palavras sublinhadas";
+            verificarPalavrasToolStripMenuItem.Click += adicionarPalavrasSublinhadasToolStripMenuItem_Click;
             // 
             // caixaDeTexto
-            // 
-            this.caixaDeTexto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.caixaDeTexto.Location = new System.Drawing.Point(0, 24);
-            this.caixaDeTexto.Multiline = true;
-            this.caixaDeTexto.Name = "caixaDeTexto";
-            this.caixaDeTexto.Size = new System.Drawing.Size(800, 426);
-            this.caixaDeTexto.TabIndex = 1;
+            //
+            caixaDeTexto.Dock = DockStyle.Fill;
+            caixaDeTexto.Location = new Point(0, 24);
+            caixaDeTexto.Margin = new Padding(4, 3, 4, 3);
+            caixaDeTexto.Multiline = true;
+            caixaDeTexto.Name = "caixaDeTexto";
+            caixaDeTexto.Size = new Size(933, 495);
+            caixaDeTexto.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.caixaDeTexto);
-            this.Controls.Add(this.barraDeMenu);
-            this.MainMenuStrip = this.barraDeMenu;
-            this.Name = "Form1";
-            this.Text = "Editor de Texto";
-            this.barraDeMenu.ResumeLayout(false);
-            this.barraDeMenu.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(933, 519);
+            Controls.Add(caixaDeTexto);
+            Controls.Add(barraDeMenu);
+            MainMenuStrip = barraDeMenu;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Form1";
+            Text = "Editor de Texto";
+            barraDeMenu.ResumeLayout(false);
+            barraDeMenu.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private ToolStripMenuItem adicionarPalavrasSublinhadasToolStripMenuItem;
     }
 }
