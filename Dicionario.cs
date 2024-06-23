@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public class EditorDeTexto
 {
@@ -65,6 +66,21 @@ public class EditorDeTexto
         return Dicionario.Contains(palavra, StringComparer.OrdinalIgnoreCase);
     }
 
+    public string SublinharPalavra(string palavra) 
+    {
+        string pattern = @"\b\w+\b";
+        return Regex.Replace(palavra, pattern, match =>
+        {
+            string palavra = match.Value;
+            if (!ValidarPalavra(palavra))
+            {
+                return new string('_', palavra.Length);
+            }
+            return palavra;
+        });
+
+    }
+
     public void SalvarDicionario(string caminhoArquivo)
     {
         try
@@ -77,9 +93,6 @@ public class EditorDeTexto
         }
     }
 
-
-    // tabela hash
-    
     public int HashDJB2(string palavra)
     {
         int hash = 5381;
