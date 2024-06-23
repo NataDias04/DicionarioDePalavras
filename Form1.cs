@@ -36,27 +36,27 @@ namespace Trabalho_AED2
             }
         }
 
-       private void verificarPalavrasToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        string[] palavras = caixaDeTexto.Text.Split(new char[] { ' ', '\n', '\r', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
-        foreach (string palavra in palavras)
+        private void verificarPalavrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!editor.ValidarPalavra(palavra))
+            string[] palavras = caixaDeTexto.Text.Split(new char[] { ' ', '\n', '\r', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string palavra in palavras)
             {
-                DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Palavra não encontrada", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
+                if (!editor.ValidarPalavra(palavra))
                 {
-                    editor.AdicionarPalavraAoDicionario(palavra);
-                    editor.SalvarDicionario("dicionario.txt");
-                    MessageBox.Show($"A palavra '{palavra}' foi adicionada ao dicionário.", "Palavra Adicionada", MessageBoxButtons.OK);
+                    DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Palavra não encontrada", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        editor.AdicionarPalavraAoDicionario(palavra);
+                        editor.SalvarDicionario("dicionario.txt");
+                        MessageBox.Show($"A palavra '{palavra}' foi adicionada ao dicionário.", "Palavra Adicionada", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"A palavra '{palavra}' já está no dicionário.", "Palavra já existente", MessageBoxButtons.OK);
                 }
             }
-            else
-            {
-                MessageBox.Show($"A palavra '{palavra}' já está no dicionário.", "Palavra já existente", MessageBoxButtons.OK);
-            }
         }
-    }
 
 
         private void adicionarPalavraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +74,18 @@ namespace Trabalho_AED2
                     }
                 }
             }
+        }
+
+        private void barraDeMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void adicionarPalavrasSublinhadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string textoAtual = caixaDeTexto.Text;
+            string textoSublinhado = editor.SublinharPalavra(textoAtual);
+            caixaDeTexto.Text = textoSublinhado;
         }
     }
 }
